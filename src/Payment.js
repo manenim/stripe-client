@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GooglePayButton from "@google-pay/button-react"
+import GooglePayButton from "@google-pay/button-react";
 
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
@@ -23,19 +23,10 @@ function Payment() {
   }, []);
 
   useEffect(() => {
-    fetch(
-      "https://1c52e7c0531f6a.lhr.life/create-payment-intent",
-      { mode: "no-cors" },
-      {
-        method: "POST",
-        body: JSON.stringify({
-          amount: 1000,
-          currency: "usd",
-          eventId: "your-event-id",
-          userId: "your-user-id",
-        }),
-      }
-    ).then(async (result) => {
+    fetch("https://1c52e7c0531f6a.lhr.life/create-payment-intent", {
+      method: "POST",
+      body: JSON.stringify({}),
+    }).then(async (result) => {
       var { clientSecret } = await result.json();
       console.log(clientSecret);
       setClientSecret(clientSecret);
