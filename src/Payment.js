@@ -10,21 +10,25 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://93387e1b5116c0.lhr.life/api/v1/payment/config", {
+    fetch("https://e38a40c625e16c.lhr.life/api/v1/payment/config", {
       mode: "no-cors",
     }).then(async (r) => {
       const { data } = await r.json();
-      setStripePromise(loadStripe(data.publishableKey));
+      setStripePromise(
+        loadStripe(
+          "pk_test_51Q9vy3HhJngUKlMMrc5JxIih67WjSULLpzpHPF8tJwIJlq81Rg1Y0s67nh6Gg8FQJEsJdoOc03mGJnG3XB1dk6yr00EYZNYbTz"
+        )
+      );
     });
   }, []);
 
   useEffect(() => {
     fetch(
-      "https://93387e1b5116c0.lhr.life/api/v1/payment/create-payment-intent",
+      "https://e38a40c625e16c.lhr.life/api/v1/payment/create-payment-intent",
       {
         method: "POST",
         body: JSON.stringify({}),
-      },
+      }
     ).then(async (result) => {
       var { data } = await result.json();
       console.log(data.clientSecret);
