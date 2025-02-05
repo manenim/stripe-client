@@ -10,14 +10,16 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://stripe-backend-flgq.onrender.com/config").then(async (r) => {
-      const { publishableKey } = await r.json();
-      setStripePromise(loadStripe(publishableKey));
-    });
+    fetch("https://f2f88f77ef8ea6.lhr.life/api/v1/payments/config").then(
+      async (r) => {
+        const { publishableKey } = await r.json();
+        setStripePromise(loadStripe(publishableKey));
+      }
+    );
   }, []);
 
   useEffect(() => {
-    fetch("https://stripe-backend-flgq.onrender.com/create-payment-intent", {
+    fetch("https://f2f88f77ef8ea6.lhr.life/api/v1/payments/create-payment-intent", {
       method: "POST",
       body: JSON.stringify({}),
     }).then(async (result) => {
