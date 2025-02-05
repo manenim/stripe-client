@@ -63,7 +63,7 @@ function Payment() {
           transactionInfo: {
             totalPriceStatus: "FINAL",
             totalPriceLabel: "Total",
-            totalPrice: "0.5",
+            totalPrice: "0.05",
             currencyCode: "USD",
             countryCode: "US",
           },
