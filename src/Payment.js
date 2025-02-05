@@ -51,14 +51,14 @@ function Payment() {
                 type: "PAYMENT_GATEWAY",
                 parameters: {
                   gateway: "stripe",
-                  gatewayMerchantId: "acct_1HSutPJAHTvMsSD3",
+                  gatewayMerchantId: "acct_1QCOxVD8GREPvPdB",
                 },
               },
             },
           ],
           merchantInfo: {
             merchantId: "BCR2DN4T27WNVEZ5",
-            merchantName: "Demo Merchant",
+            merchantName: "Saltech",
           },
           transactionInfo: {
             totalPriceStatus: "FINAL",
