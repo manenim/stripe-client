@@ -10,10 +10,10 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://e131da29124cc7.lhr.life/api/v1/payment/config", {
+    fetch("https://1c52e7c0531f6a.lhr.life/config", {
       mode: "no-cors",
     }).then(async (r) => {
-      const { data } = await r.json();
+      // const { data } = await r.json();
       setStripePromise(
         loadStripe(
           "pk_test_51Q9vy3HhJngUKlMMrc5JxIih67WjSULLpzpHPF8tJwIJlq81Rg1Y0s67nh6Gg8FQJEsJdoOc03mGJnG3XB1dk6yr00EYZNYbTz"
@@ -24,7 +24,7 @@ function Payment() {
 
   useEffect(() => {
     fetch(
-      "https://e131da29124cc7.lhr.life/api/v1/payment/create-payment-intent",
+      "https://1c52e7c0531f6a.lhr.life/create-payment-intent",
       { mode: "no-cors" },
       {
         method: "POST",
@@ -36,9 +36,9 @@ function Payment() {
         }),
       }
     ).then(async (result) => {
-      var { data } = await result.json();
-      console.log(data.clientSecret);
-      setClientSecret(data.clientSecret);
+      var { clientSecret } = await result.json();
+      console.log(clientSecret);
+      setClientSecret(clientSecret);
     });
   }, []);
 
