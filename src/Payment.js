@@ -10,7 +10,7 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://21afa2306130ed.lhr.life/config", {
+    fetch("https://stripe-backend-flgq.onrender.com/config", {
       mode: "no-cors",
     }).then(async (r) => {
       // const { data } = await r.json();
@@ -23,7 +23,7 @@ function Payment() {
   }, []);
 
   useEffect(() => {
-    fetch("https://21afa2306130ed.lhr.life/create-payment-intent", {
+    fetch("https://stripe-backend-flgq.onrender.com/create-payment-intent", {
       method: "POST",
       body: JSON.stringify({}),
     }).then(async (result) => {
