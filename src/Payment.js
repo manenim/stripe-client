@@ -51,7 +51,7 @@ function Payment() {
                 type: "PAYMENT_GATEWAY",
                 parameters: {
                   gateway: "stripe",
-                  gatewayMerchantId: "acct_1QCOxVD8GREPvPdB",
+                  gatewayMerchantId: "acct_1Q9vSiDBypCJhs5j",
                 },
               },
             },
