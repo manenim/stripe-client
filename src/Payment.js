@@ -36,7 +36,7 @@ function Payment() {
   return (
     <>
       <GooglePayButton
-        environment="PRODUCTION"
+        environment="TEST"
         paymentRequest={{
           apiVersion: 2,
           apiVersionMinor: 0,
