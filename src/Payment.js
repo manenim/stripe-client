@@ -30,43 +30,6 @@ function Payment() {
 
   return (
     <>
-      <GooglePayButton
-        environment="TEST"
-        paymentRequest={{
-          apiVersion: 2,
-          apiVersionMinor: 0,
-          allowedPaymentMethods: [
-            {
-              type: "CARD",
-              parameters: {
-                allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                allowedCardNetworks: ["MASTERCARD", "VISA"],
-              },
-              tokenizationSpecification: {
-                type: "PAYMENT_GATEWAY",
-                parameters: {
-                  gateway: "stripe",
-                  gatewayMerchantId: "acct_1Q9vy3HhJngUKlMM",
-                },
-              },
-            },
-          ],
-          merchantInfo: {
-            merchantId: "BCR2DN4T27WNVEZ5",
-            merchantName: "Demo Merchant",
-          },
-          transactionInfo: {
-            totalPriceStatus: "FINAL",
-            totalPriceLabel: "Total",
-            totalPrice: "100.00",
-            currencyCode: "USD",
-            countryCode: "US",
-          },
-        }}
-        onLoadPaymentData={(paymentRequest) => {
-          console.log("load payment data", paymentRequest);
-        }}
-      />
       <h1>React Stripe and the Payment Element</h1>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
