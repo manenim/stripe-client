@@ -35,7 +35,7 @@ function Payment() {
 
   return (
     <>
-      {/* <GooglePayButton
+      <GooglePayButton
         environment="TEST"
         paymentRequest={{
           apiVersion: 2,
@@ -63,7 +63,7 @@ function Payment() {
           transactionInfo: {
             totalPriceStatus: "FINAL",
             totalPriceLabel: "Total",
-            totalPrice: "100.00",
+            totalPrice: "0.5",
             currencyCode: "USD",
             countryCode: "US",
           },
@@ -71,7 +71,7 @@ function Payment() {
         onLoadPaymentData={(paymentRequest) => {
           console.log("load payment data", paymentRequest);
         }}
-      /> */}
+      />
       <h1>React Stripe and the Payment Element</h1>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
