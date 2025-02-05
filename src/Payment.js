@@ -21,11 +21,10 @@ function Payment() {
   useEffect(() => {
     fetch(
       "https://93387e1b5116c0.lhr.life/api/v1/payment/create-payment-intent",
-      { mode: "no-cors" },
       {
         method: "POST",
         body: JSON.stringify({}),
-      }
+      },
     ).then(async (result) => {
       var { data } = await result.json();
       console.log(data.clientSecret);
