@@ -36,7 +36,7 @@ function Payment() {
   return (
     <>
       <GooglePayButton
-        environment="PRODUCTION"
+        environment="TEST"
         paymentRequest={{
           apiVersion: 2,
           apiVersionMinor: 0,
@@ -51,7 +51,7 @@ function Payment() {
                 type: "PAYMENT_GATEWAY",
                 parameters: {
                   gateway: "stripe",
-                  gatewayMerchantId: "acct_1Q9vSiDBypCJhs5j",
+                  gatewayMerchantId: "acct_1QCOxVD8GREPvPdB",
                 },
               },
             },
