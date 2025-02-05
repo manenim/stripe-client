@@ -25,6 +25,7 @@ function Payment() {
   useEffect(() => {
     fetch(
       "https://e38a40c625e16c.lhr.life/api/v1/payment/create-payment-intent",
+      {mode: "no-cors"},
       {
         method: "POST",
         body: JSON.stringify({
