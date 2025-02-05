@@ -51,6 +51,10 @@ function Payment() {
                 type: "PAYMENT_GATEWAY",
                 parameters: {
                   gateway: "stripe",
+                  stripe: {
+                    publishableKey:
+                      "pk_test_51QCOxVD8GREPvPdBJRtqz17XAAPdtxqNLhCHyP9NsGRfut7JllS0H4EzGK25JLJglbgccYrna7gDd2bL8grSy9Yu00GyxSmhSM",
+                  },
                   gatewayMerchantId: "acct_1QCOxVD8GREPvPdB",
                 },
               },
