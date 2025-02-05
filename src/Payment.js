@@ -27,7 +27,12 @@ function Payment() {
       "https://e38a40c625e16c.lhr.life/api/v1/payment/create-payment-intent",
       {
         method: "POST",
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+          amount: 1000,
+          currency: "usd",
+          eventId: "your-event-id",
+          userId: "your-user-id",
+        }),
       }
     ).then(async (result) => {
       var { data } = await result.json();
